@@ -20,7 +20,6 @@
   in {
     nixosModules.default = {
       imports = [
-        (import (./static.nix) self)
         (import (./options.nix) self)
         (import (./service.nix) self)
       ];
