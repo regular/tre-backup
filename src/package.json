@@ -1,0 +1,24 @@
+{
+  "name": "tre-backup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "tre-backup": "bin.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jan Bölsche <jan@lagomorph.de> (http://regular.codes/)",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "flumecodec": "^0.0.1",
+    "flumedb": "^2.1.8",
+    "flumelog-offset": "^3.4.4",
+    "pull-catch": "^1.1.0",
+    "pull-defer": "^0.2.3",
+    "pull-next": "^1.0.1",
+    "sd-notify-lite": "^1.0.1"
+  }
+}
