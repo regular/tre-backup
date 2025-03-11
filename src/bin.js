@@ -39,6 +39,7 @@ if (!config.network) {
 
 const db = DB(config.path, {seqBits: 32})
 
+let latestReported = null
 function getLatest() {
   return new Promise( (resolve, reject)=>{
     pull(
@@ -46,7 +47,13 @@ function getLatest() {
       pull.collect( (err, data)=>{
         if (err) return reject(err)
         if (data.length == 0) return resolve(-1)
-        resolve(data[0].seq)
+        const {seq, value} = data[0]
+        if (seq !== latestReported) {
+          latestReported = seq
+          console.log(`Backup is at seq ${seq}`)
+          debug('%O', value)
+        }
+        resolve(seq)
       })
     )
   })
