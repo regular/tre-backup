@@ -41,9 +41,9 @@ in with lib; {
 
           RuntimeDirectory = runtimePath name;
           StateDirectory = store; 
-          Environment = [
-            "DEBUG=tre-backup:*"
-          ];
+          #Environment = [
+          #  "DEBUG=tre-backup:*"
+          #];
         };
       };
     }) servers;

@@ -16,6 +16,7 @@
     "flumecodec": "^0.0.1",
     "flumedb": "^2.1.8",
     "flumelog-offset": "^3.4.4",
+    "luxon": "^3.5.0",
     "pull-catch": "^1.1.0",
     "pull-defer": "^0.2.3",
     "pull-next": "^1.0.1",

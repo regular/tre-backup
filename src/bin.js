@@ -5,6 +5,7 @@ const fs = require('fs')
 const {join} = require('path')
 const pull = require('pull-stream')
 const defer = require('pull-defer')
+const {DateTime} = require('luxon')
 
 const sdNotify = require('sd-notify-lite')
 //const journal = new (require('systemd-journald'))({syslog_identifier: 'tre-server'})
@@ -50,7 +51,7 @@ function getLatest() {
         const {seq, value} = data[0]
         if (seq !== latestReported) {
           latestReported = seq
-          console.log(`Backup is at seq ${seq}`)
+          console.log(`Backup is at seq ${seq} (${DateTime.fromMillis(value.timestamp).toString()})`)
           debug('%O', value)
         }
         resolve(seq)

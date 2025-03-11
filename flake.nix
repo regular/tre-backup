@@ -57,7 +57,7 @@
         makeCacheWritable = true;
         npmFlags = [ "--omit=dev" "--omit=optional"];
 
-        npmDepsHash = "sha256-y1mSUgL5hafBmrokJvAlhZk/hHd9q6qyI6hmSLlfLHI=";
+        npmDepsHash = "sha256-8vKniyyD8nghdlIyCuU5xj+cwUo0GmjLGn82fkgHSwc=";
 
         src = ./src;
 
