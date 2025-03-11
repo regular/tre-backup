@@ -22,8 +22,8 @@ let
       };
 
       store = mkOption rec {
-        type = types.str;
-        default = "tre-backup/${name}";
+        type = types.nullOr types.str;
+        default = null;
         description = "WHere (wthin /var/lib) to store the backup";
       };
 

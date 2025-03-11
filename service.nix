@@ -18,6 +18,7 @@ in with lib; {
     }) servers;
 
     systemd.services = mapAttrs' (name: cfg: let
+      store = if cfg.store == null then "tre-backup/${name}" else cfg.store;
       globalOpts = "--config %d/${name} --appname backup-${name} --path $STATE_DIRECTORY";
     in {
       name = "tre-backup-${name}";
@@ -39,7 +40,7 @@ in with lib; {
           RuntimeDirectoryMode = "0750";
 
           RuntimeDirectory = runtimePath name;
-          StateDirectory = cfg.store; 
+          StateDirectory = store; 
           Environment = [
             "DEBUG=tre-backup:*"
           ];
